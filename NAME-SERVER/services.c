@@ -10,6 +10,7 @@ LOCATION directory[TABLE_SIZE];
 
 void register_service(int id, int port)
 {
+    // Cambio de puerto para un id registrado
     for(int i = 0; i < entry; i++) {
         if(directory[i].id == id) {
             directory[i].port = port;
@@ -31,5 +32,6 @@ int find_service(int id)
         }
     }
     
+    // no lo encontró
     return NIL;
 }

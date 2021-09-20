@@ -16,19 +16,21 @@ int main(int argc, char *argv[])
         int proc = recv_integer(client_sock);
         
         switch(proc) {
-            case 1:         // registrar un servidor
+            case 1:         // registrar un servidor que tiene servicios
                 id = recv_integer(client_sock);
                 port = recv_integer(client_sock);
                 printf("suscription: %d, %d\n", id, port);
                 
+                // puerto donde se debe de conectar el cliente para encontrar el servicio
                 register_service(id,port);
                 break;
                 
-            case 2:         // encontrar un servidor
+            case 2:         // encontrar un servidor que tiene servicios
                 id = recv_integer(client_sock);
                 port = find_service(id);
                 printf("lookup: %d, %d\n", id, port);
                 
+                // puerto donde se debe de conectar el cliente para ejecutar el servicio
                 send_integer(client_sock, port);
                 break;
                 

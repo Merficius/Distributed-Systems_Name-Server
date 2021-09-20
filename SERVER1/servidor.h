@@ -6,7 +6,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 
-#define PORTMAPPER 1111
+#define PORTMAPPER 1111 // Servidor de nombres
 #define SERVICE_PORT 4444
 
 // utilerias
